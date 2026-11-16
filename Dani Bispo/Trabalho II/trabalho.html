@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kung Fu Panda 2</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #fff8e9;
+            color: #3c291e;
+        }
+
+        /* MENU */
+
+        header {
+            background-color: #872b18;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h2 {
+            color: #ffd45e;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd45e;
+        }
+
+        /* INÍCIO */
+
+        .inicio {
+            background: linear-gradient(120deg, #ffc83d, #f18a24);
+            padding: 55px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+        }
+
+        .inicio-texto {
+            max-width: 500px;
+        }
+
+        .inicio h1 {
+            font-size: 55px;
+            color: #762719;
+            line-height: 1.1;
+        }
+
+        .inicio p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .inicio img {
+            width: 48%;
+            border-radius: 18px;
+            border: 5px solid white;
+            box-shadow: 0 8px 20px #00000030;
+        }
+
+        .botao {
+            display: inline-block;
+            background-color: #872b18;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .botao:hover {
+            background-color: #5c1d10;
+        }
+
+        /* SEÇÕES */
+
+        section {
+            padding: 55px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .titulo h2 {
+            color: #872b18;
+            font-size: 32px;
+        }
+
+        .titulo p {
+            color: #94765c;
+        }
+
+        .historia {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        /* FICHA TÉCNICA */
+
+        .ficha {
+            background-color: #ffedc5;
+        }
+
+        .informacoes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .info {
+            background-color: white;
+            padding: 22px;
+            width: 200px;
+            text-align: center;
+            border-radius: 12px;
+            border-bottom: 4px solid #e8a52b;
+        }
+
+        .info h3 {
+            color: #872b18;
+            margin-bottom: 8px;
+        }
+
+        /* PERSONAGENS */
+
+        .personagens {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .card {
+            background-color: white;
+            width: 230px;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px #00000012;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card .emoji {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #872b18;
+            margin-bottom: 10px;
+        }
+
+        /* MENSAGEM */
+
+        .mensagem {
+            background-color: #872b18;
+            color: white;
+            text-align: center;
+        }
+
+        .mensagem h2 {
+            color: #ffd45e;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .mensagem p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background-color: #321d15;
+            color: white;
+            padding: 22px;
+            text-align: center;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .inicio {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .inicio h1 {
+                font-size: 42px;
+            }
+
+            .inicio img {
+                width: 100%;
+            }
+
+            .info {
+                width: 145px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <header>
+        <h2>KUNG FU PANDA 2</h2>
+
+        <nav>
+            <a href="#historia">História</a>
+            <a href="#filme">Filme</a>
+            <a href="#personagens">Personagens</a>
+            <a href="#mensagem">Mensagem</a>
+        </nav>
+    </header>
+
+    <!-- DESTAQUE -->
+
+    <div class="inicio">
+
+        <div class="inicio-texto">
+
+            <h1>Kung Fu Panda 2</h1>
+
+            <p>
+                Uma aventura cheia de ação, amizade e coragem.
+                Acompanhe Po em uma nova missão para proteger
+                a China e descobrir os segredos de seu passado.
+            </p>
+
+            <a href="#historia" class="botao">
+                Conheça o filme
+            </a>
+
+        </div>
+
+    
+
+    </div>
+
+    <!-- HISTÓRIA -->
+
+    <section id="historia">
+
+        <div class="titulo">
+            <h2>A história do filme</h2>
+            <p>Uma nova aventura para o Dragão Guerreiro</p>
+        </div>
+
+        <div class="historia">
+
+            <p>
+                Em Kung Fu Panda 2, Po já é conhecido como o
+                Dragão Guerreiro e vive grandes aventuras ao lado
+                dos Cinco Furiosos. Porém, surge uma nova ameaça:
+                Lorde Shen, um pavão que deseja conquistar a China
+                utilizando uma arma poderosa.
+            </p>
+
+            <br>
+
+            <p>
+                Durante essa jornada, Po começa a descobrir
+                informações sobre sua infância e sua verdadeira
+                origem. Para vencer seus desafios, ele precisará
+                encontrar equilíbrio, coragem e paz interior.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FICHA TÉCNICA -->
+
+    <section class="ficha" id="filme">
+
+        <div class="titulo">
+            <h2>Ficha técnica</h2>
+            <p>Conheça algumas informações sobre a produção</p>
+        </div>
+
+        <div class="informacoes">
+
+            <div class="info">
+                <h3>Lançamento</h3>
+                <p>2011</p>
+            </div>
+
+            <div class="info">
+                <h3>Direção</h3>
+                <p>Jennifer Yuh Nelson</p>
+            </div>
+
+            <div class="info">
+                <h3>Estúdio</h3>
+                <p>DreamWorks</p>
+            </div>
+
+            <div class="info">
+                <h3>Gênero</h3>
+                <p>Animação e aventura</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PERSONAGENS -->
+
+    <section id="personagens">
+
+        <div class="titulo">
+            <h2>Personagens principais</h2>
+            <p>Conheça quem faz parte dessa aventura</p>
+        </div>
+
+        <div class="personagens">
+
+            <div class="card">
+                <div class="emoji">🐼</div>
+                <h3>Po</h3>
+                <p>
+                    O Dragão Guerreiro, divertido, corajoso
+                    e determinado a proteger seus amigos.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🐯</div>
+                <h3>Tigresa</h3>
+                <p>
+                    Uma guerreira habilidosa, forte e leal
+                    aos seus companheiros.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🦚</div>
+                <h3>Lorde Shen</h3>
+                <p>
+                    O vilão da história, que deseja dominar
+                    a China com seus planos.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MENSAGEM -->
+
+    <section class="mensagem" id="mensagem">
+
+        <h2>O que o filme nos ensina?</h2>
+
+        <p>
+            Kung Fu Panda 2 mostra a importância da amizade,
+            da coragem e do autoconhecimento. A história ensina
+            que nosso passado faz parte de quem somos, mas não
+            determina nosso futuro. Também destaca a importância
+            de encontrar a paz interior e nunca desistir.
+        </p>
+
+    </section>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+          
+        </p>
+
+        <p>
+           
+        </p>
+
+    </footer>
+
+</body>
+</html>
