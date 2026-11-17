@@ -1,428 +1,803 @@
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Kung Fu Panda 2</title>
+    <title>La Casa de Papel | Página Oficial</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
-            background-color: #fff8e9;
-            color: #3c291e;
+            background-color: #111;
+            color: #eee;
+            font-family: Arial, sans-serif;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background: linear-gradient(90deg, #650000, #c40000, #650000);
+            text-align: center;
+            padding: 45px 15px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        header p {
+            font-size: 18px;
         }
 
         /* MENU */
-
-        header {
-            background-color: #872b18;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .navbar {
+            background-color: #1c1c1c;
         }
 
-        header h2 {
-            color: #ffd45e;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
+        .navbar-brand {
+            color: #e50914 !important;
             font-weight: bold;
         }
 
-        nav a:hover {
-            color: #ffd45e;
+        .navbar a {
+            color: white !important;
         }
 
-        /* INÍCIO */
-
-        .inicio {
-            background: linear-gradient(120deg, #ffc83d, #f18a24);
-            padding: 55px 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 35px;
+        .navbar a:hover {
+            color: #e50914 !important;
         }
 
-        .inicio-texto {
-            max-width: 500px;
+        /* BREADCRUMB */
+        .breadcrumb {
+            background-color: #252525;
+            padding: 12px;
+            border-radius: 8px;
         }
 
-        .inicio h1 {
-            font-size: 55px;
-            color: #762719;
-            line-height: 1.1;
-        }
-
-        .inicio p {
-            font-size: 18px;
-            margin: 20px 0;
-        }
-
-        .inicio img {
-            width: 48%;
-            border-radius: 18px;
-            border: 5px solid white;
-            box-shadow: 0 8px 20px #00000030;
-        }
-
-        .botao {
-            display: inline-block;
-            background-color: #872b18;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
+        .breadcrumb a {
+            color: #ff5555;
             text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+        }
+
+        /* TÍTULOS */
+        .titulo {
+            color: #e50914;
             font-weight: bold;
+            margin-bottom: 22px;
+            border-left: 5px solid #e50914;
+            padding-left: 12px;
         }
-
-        .botao:hover {
-            background-color: #5c1d10;
-        }
-
-        /* SEÇÕES */
 
         section {
-            padding: 55px 8%;
+            margin-bottom: 60px;
         }
 
-        .titulo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .titulo h2 {
-            color: #872b18;
-            font-size: 32px;
-        }
-
-        .titulo p {
-            color: #94765c;
-        }
-
-        .historia {
-            text-align: center;
-            max-width: 850px;
-            margin: auto;
-            font-size: 17px;
-            line-height: 1.9;
-        }
-
-        /* FICHA TÉCNICA */
-
-        .ficha {
-            background-color: #ffedc5;
-        }
-
-        .informacoes {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .info {
-            background-color: white;
-            padding: 22px;
-            width: 200px;
-            text-align: center;
+        /* DESTAQUE */
+        .destaque {
+            background-color: #202020;
+            padding: 30px;
             border-radius: 12px;
-            border-bottom: 4px solid #e8a52b;
         }
 
-        .info h3 {
-            color: #872b18;
-            margin-bottom: 8px;
+        .destaque img {
+            width: 100%;
+            border-radius: 10px;
         }
 
-        /* PERSONAGENS */
-
-        .personagens {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 22px;
+        /* BOTÕES */
+        .btn-danger {
+            background-color: #b00000;
+            border: none;
         }
 
+        .btn-danger:hover {
+            background-color: #e50914;
+        }
+
+        /* CARDS */
         .card {
-            background-color: white;
-            width: 230px;
-            padding: 25px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px #00000012;
+            background-color: #222;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
             transition: 0.3s;
         }
 
         .card:hover {
             transform: translateY(-7px);
+            border-color: #e50914;
+            box-shadow: 0 5px 20px #e5091440;
         }
 
-        .card .emoji {
-            font-size: 45px;
-            margin-bottom: 10px;
+        .card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            object-position: top;
         }
 
-        .card h3 {
-            color: #872b18;
-            margin-bottom: 10px;
+        .card-title {
+            color: #ff4444;
+            font-weight: bold;
         }
 
-        /* MENSAGEM */
-
-        .mensagem {
-            background-color: #872b18;
-            color: white;
-            text-align: center;
+        /* TEMPORADAS */
+        .temporada {
+            background-color: #252525;
+            padding: 25px;
+            border-radius: 10px;
+            border-bottom: 4px solid #b00000;
+            height: 100%;
         }
 
-        .mensagem h2 {
-            color: #ffd45e;
-            font-size: 30px;
-            margin-bottom: 15px;
+        .temporada h4 {
+            color: #ff4444;
         }
 
-        .mensagem p {
-            max-width: 750px;
-            margin: auto;
-            line-height: 1.8;
+        /* CURIOSIDADE */
+        .curiosidade {
+            background-color: #292020;
+            padding: 25px;
+            border-left: 5px solid #e50914;
+            border-radius: 8px;
+        }
+
+        /* CARROSSEL */
+        .carousel img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 10px;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            padding: 15px;
         }
 
         /* RODAPÉ */
-
         footer {
-            background-color: #321d15;
-            color: white;
-            padding: 22px;
+            background-color: #700000;
             text-align: center;
+            padding: 30px 15px;
+            margin-top: 50px;
         }
 
-        /* CELULAR */
-
-        @media (max-width: 700px) {
-
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav a {
-                margin: 5px;
-                font-size: 14px;
-            }
-
-            .inicio {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .inicio h1 {
-                font-size: 42px;
-            }
-
-            .inicio img {
-                width: 100%;
-            }
-
-            .info {
-                width: 145px;
-            }
+        footer p {
+            margin: 5px;
         }
 
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .carousel img {
+                height: 280px;
+            }
+
+            .card img {
+                height: 280px;
+            }
+        }
     </style>
+
 </head>
 
 <body>
 
-    <!-- MENU -->
-
+    <!-- HEADER -->
     <header>
-        <h2>KUNG FU PANDA 2</h2>
-
-        <nav>
-            <a href="#historia">História</a>
-            <a href="#filme">Filme</a>
-            <a href="#personagens">Personagens</a>
-            <a href="#mensagem">Mensagem</a>
-        </nav>
+        <h1>LA CASA DE PAPEL</h1>
+        <p>O maior assalto da história começa aqui.</p>
     </header>
 
-    <!-- DESTAQUE -->
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
 
-    <div class="inicio">
+            <a class="navbar-brand" href="#inicio">LCDP</a>
 
-        <div class="inicio-texto">
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#menu">
 
-            <h1>Kung Fu Panda 2</h1>
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sinopse</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#personagens">Personagens</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#temporadas">Temporadas</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galeria</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+
+        <!-- BREADCRUMB -->
+        <nav aria-label="breadcrumb">
+
+            <ol class="breadcrumb">
+
+                <li class="breadcrumb-item">
+                    <a href="#inicio">Home</a>
+                </li>
+
+                <li class="breadcrumb-item">
+                    <a href="#sobre">Séries</a>
+                </li>
+
+                <li class="breadcrumb-item active" aria-current="page">
+                    La Casa de Papel
+                </li>
+
+            </ol>
+
+        </nav>
+
+        <!-- APRESENTAÇÃO -->
+        <section id="inicio" class="destaque">
+
+            <div class="row align-items-center g-4">
+
+                <div class="col-md-5">
+
+                    <img
+                        src="https://www.impawards.com/2017/posters/money_heist_ver3.jpg"
+                        alt="Pôster de La Casa de Papel">
+
+                </div>
+
+                <div class="col-md-7">
+
+                    <h2 class="titulo">La Casa de Papel</h2>
+
+                    <p>
+                        La Casa de Papel é uma série espanhola de
+                        suspense e drama criada por Álex Pina.
+                        Lançada em 2017, conquistou milhões de
+                        espectadores em todo o mundo.
+                    </p>
+
+                    <p>
+                        A produção apresenta uma história cheia
+                        de mistérios, inteligência, conflitos,
+                        emoções e reviravoltas surpreendentes.
+                    </p>
+
+                    <p><strong>Gênero:</strong> Suspense e drama.</p>
+
+                    <p><strong>Criador:</strong> Álex Pina.</p>
+
+                    <p><strong>Origem:</strong> Espanha.</p>
+
+                    <p><strong>Lançamento:</strong> 2017.</p>
+
+                    <p><strong>Temporadas:</strong> 5 partes.</p>
+
+                    <p><strong>Plataforma:</strong> Netflix.</p>
+
+                    <a href="#sobre" class="btn btn-danger mt-2">
+                        Conhecer a série
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SINOPSE -->
+        <section id="sobre">
+
+            <h2 class="titulo">Sinopse</h2>
 
             <p>
-                Uma aventura cheia de ação, amizade e coragem.
-                Acompanhe Po em uma nova missão para proteger
-                a China e descobrir os segredos de seu passado.
+                A história acompanha um grupo de oito criminosos
+                que recebe uma missão planejada por um homem
+                conhecido como Professor.
             </p>
-
-            <a href="#historia" class="botao">
-                Conheça o filme
-            </a>
-
-        </div>
-
-    
-
-    </div>
-
-    <!-- HISTÓRIA -->
-
-    <section id="historia">
-
-        <div class="titulo">
-            <h2>A história do filme</h2>
-            <p>Uma nova aventura para o Dragão Guerreiro</p>
-        </div>
-
-        <div class="historia">
 
             <p>
-                Em Kung Fu Panda 2, Po já é conhecido como o
-                Dragão Guerreiro e vive grandes aventuras ao lado
-                dos Cinco Furiosos. Porém, surge uma nova ameaça:
-                Lorde Shen, um pavão que deseja conquistar a China
-                utilizando uma arma poderosa.
+                O objetivo é realizar um grande assalto à
+                Casa da Moeda da Espanha, onde o grupo pretende
+                imprimir bilhões de euros. Para isso, eles
+                precisam enfrentar a polícia, os reféns e
+                diversos problemas inesperados.
             </p>
-
-            <br>
 
             <p>
-                Durante essa jornada, Po começa a descobrir
-                informações sobre sua infância e sua verdadeira
-                origem. Para vencer seus desafios, ele precisará
-                encontrar equilíbrio, coragem e paz interior.
+                Ao longo da série, surgem relacionamentos,
+                amizades, conflitos e segredos que tornam
+                cada episódio emocionante.
             </p>
 
-        </div>
+        </section>
 
-    </section>
+        <!-- PERSONAGENS -->
+        <section id="personagens">
 
-    <!-- FICHA TÉCNICA -->
+            <h2 class="titulo">Personagens principais</h2>
 
-    <section class="ficha" id="filme">
+            <p class="mb-4">
+                Conheça alguns dos personagens mais importantes
+                da história e os atores que fazem parte do elenco.
+            </p>
 
-        <div class="titulo">
-            <h2>Ficha técnica</h2>
-            <p>Conheça algumas informações sobre a produção</p>
-        </div>
+            <div class="row g-4">
 
-        <div class="informacoes">
+                <!-- PROFESSOR -->
+                <article class="col-md-4 col-sm-6">
 
-            <div class="info">
-                <h3>Lançamento</h3>
-                <p>2011</p>
+                    <div class="card shadow">
+
+                        <img
+                            src="https://static.tvmaze.com/uploads/images/medium_portrait/380/951042.jpg"
+                            class="card-img-top"
+                            alt="Professor">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Professor</h5>
+
+                            <p><strong>Ator:</strong> Álvaro Morte</p>
+
+                            <p class="card-text">
+                                É o responsável por planejar os
+                                grandes assaltos. Inteligente,
+                                estratégico e muito observador.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- BERLIM -->
+                <article class="col-md-4 col-sm-6">
+
+                    <div class="card shadow">
+
+                        <img
+                            src="https://static.tvmaze.com/uploads/images/medium_portrait/380/951051.jpg"
+                            class="card-img-top"
+                            alt="Berlim">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Berlim</h5>
+
+                            <p><strong>Ator:</strong> Pedro Alonso</p>
+
+                            <p class="card-text">
+                                Um dos personagens mais marcantes
+                                da série. Possui personalidade
+                                forte e participa da liderança
+                                da equipe.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- NAIROBI -->
+                <article class="col-md-4 col-sm-6">
+
+                    <div class="card shadow">
+
+                        <img
+                            src="https://static.tvmaze.com/uploads/images/medium_portrait/380/951052.jpg"
+                            class="card-img-top"
+                            alt="Nairóbi">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Nairóbi</h5>
+
+                            <p><strong>Atora:</strong> Alba Flores</p>
+
+                            <p class="card-text">
+                                É determinada, inteligente e
+                                responsável por uma importante
+                                função dentro da equipe.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- TÓQUIO -->
+                <article class="col-md-4 col-sm-6">
+
+                    <div class="card shadow">
+
+                        <img
+                            src="https://static.tvmaze.com/uploads/images/medium_portrait/380/951053.jpg"
+                            class="card-img-top"
+                            alt="Tóquio">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Tóquio</h5>
+
+                            <p><strong>Atora:</strong> Úrsula Corberó</p>
+
+                            <p class="card-text">
+                                Uma das protagonistas e narradora
+                                da história. É corajosa, impulsiva
+                                e muito marcante.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- DENVER -->
+                <article class="col-md-4 col-sm-6">
+
+                    <div class="card shadow">
+
+                        <img
+                            src="https://static.tvmaze.com/uploads/images/medium_portrait/380/951059.jpg"
+                            class="card-img-top"
+                            alt="Denver">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Denver</h5>
+
+                            <p><strong>Ator:</strong> Jaime Lorente</p>
+
+                            <p class="card-text">
+                                Conhecido pelo jeito espontâneo,
+                                pelas emoções intensas e pelo
+                                humor característico.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- RIO -->
+                <article class="col-md-4 col-sm-6">
+
+                    <div class="card shadow">
+
+                        <img
+                            src="https://static.tvmaze.com/uploads/images/medium_portrait/380/951045.jpg"
+                            class="card-img-top"
+                            alt="Rio">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Rio</h5>
+
+                            <p><strong>Ator:</strong> Miguel Herrán</p>
+
+                            <p class="card-text">
+                                É o especialista em tecnologia
+                                da equipe e possui um papel
+                                importante nos planos.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </article>
+
             </div>
 
-            <div class="info">
-                <h3>Direção</h3>
-                <p>Jennifer Yuh Nelson</p>
+        </section>
+
+        <!-- TEMPORADAS -->
+        <section id="temporadas">
+
+            <h2 class="titulo">Temporadas da série</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="temporada">
+
+                        <h4>Parte 1</h4>
+
+                        <p>
+                            O Professor reúne os integrantes
+                            da equipe para realizar o assalto
+                            à Casa da Moeda.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="temporada">
+
+                        <h4>Parte 2</h4>
+
+                        <p>
+                            O grupo enfrenta novos desafios
+                            enquanto tenta concluir o plano
+                            e escapar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="temporada">
+
+                        <h4>Parte 3</h4>
+
+                        <p>
+                            A equipe volta a se reunir
+                            para uma nova missão,
+                            dessa vez no Banco da Espanha.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="temporada">
+
+                        <h4>Parte 4</h4>
+
+                        <p>
+                            Os personagens enfrentam
+                            situações cada vez mais difíceis
+                            durante o segundo grande assalto.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="temporada">
+
+                        <h4>Parte 5</h4>
+
+                        <p>
+                            A história chega ao seu momento
+                            decisivo, com grandes emoções
+                            e o desfecho da série.
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="info">
-                <h3>Estúdio</h3>
-                <p>DreamWorks</p>
-            </div>
+        </section>
 
-            <div class="info">
-                <h3>Gênero</h3>
-                <p>Animação e aventura</p>
-            </div>
+        <!-- CURIOSIDADES -->
+        <section id="curiosidades">
 
-        </div>
+            <h2 class="titulo">Curiosidades</h2>
 
-    </section>
+            <div class="curiosidade">
 
-    <!-- PERSONAGENS -->
+                <h5>Você sabia?</h5>
 
-    <section id="personagens">
-
-        <div class="titulo">
-            <h2>Personagens principais</h2>
-            <p>Conheça quem faz parte dessa aventura</p>
-        </div>
-
-        <div class="personagens">
-
-            <div class="card">
-                <div class="emoji">🐼</div>
-                <h3>Po</h3>
                 <p>
-                    O Dragão Guerreiro, divertido, corajoso
-                    e determinado a proteger seus amigos.
+                    Os personagens da série são conhecidos
+                    por nomes de cidades, como Tóquio,
+                    Berlim, Nairóbi, Rio e Denver.
                 </p>
-            </div>
 
-            <div class="card">
-                <div class="emoji">🐯</div>
-                <h3>Tigresa</h3>
                 <p>
-                    Uma guerreira habilidosa, forte e leal
-                    aos seus companheiros.
+                    A máscara de Salvador Dalí e os macacões
+                    vermelhos se tornaram símbolos muito
+                    conhecidos da produção.
                 </p>
+
+                <p class="mb-0">
+                    A série foi criada pelo espanhol Álex Pina
+                    e se tornou um fenômeno internacional.
+                </p>
+
             </div>
 
-            <div class="card">
-                <div class="emoji">🦚</div>
-                <h3>Lorde Shen</h3>
-                <p>
-                    O vilão da história, que deseja dominar
-                    a China com seus planos.
-                </p>
+        </section>
+
+        <!-- CARROSSEL -->
+        <section id="galeria">
+
+            <h2 class="titulo">Galeria de imagens</h2>
+
+            <p>
+                Alguns dos personagens que marcaram
+                a história de La Casa de Papel.
+            </p>
+
+            <div id="carrosselSerie"
+                class="carousel slide"
+                data-bs-ride="carousel">
+
+                <!-- INDICADORES -->
+                <div class="carousel-indicators">
+
+                    <button type="button"
+                        data-bs-target="#carrosselSerie"
+                        data-bs-slide-to="0"
+                        class="active">
+                    </button>
+
+                    <button type="button"
+                        data-bs-target="#carrosselSerie"
+                        data-bs-slide-to="1">
+                    </button>
+
+                    <button type="button"
+                        data-bs-target="#carrosselSerie"
+                        data-bs-slide-to="2">
+                    </button>
+
+                </div>
+
+                <!-- IMAGENS -->
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+
+                        <img
+                            src="https://static.tvmaze.com/uploads/images/medium_portrait/380/951042.jpg"
+                            class="d-block w-100"
+                            alt="Professor">
+
+                        <div class="carousel-caption">
+
+                            <h5>O Professor</h5>
+
+                            <p>O cérebro por trás de todo o plano.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item">
+
+                        <img
+                            src="https://static.tvmaze.com/uploads/images/medium_portrait/380/951051.jpg"
+                            class="d-block w-100"
+                            alt="Berlim">
+
+                        <div class="carousel-caption">
+
+                            <h5>Berlim</h5>
+
+                            <p>Um dos personagens mais inesquecíveis.</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item">
+
+                        <img
+                            src="https://static.tvmaze.com/uploads/images/medium_portrait/380/951053.jpg"
+                            class="d-block w-100"
+                            alt="Tóquio">
+
+                        <div class="carousel-caption">
+
+                            <h5>Tóquio</h5>
+
+                            <p>Uma protagonista cheia de personalidade.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- BOTÃO ANTERIOR -->
+                <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carrosselSerie"
+                    data-bs-slide="prev">
+
+                    <span class="carousel-control-prev-icon"></span>
+
+                    <span class="visually-hidden">Anterior</span>
+
+                </button>
+
+                <!-- BOTÃO PRÓXIMO -->
+                <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carrosselSerie"
+                    data-bs-slide="next">
+
+                    <span class="carousel-control-next-icon"></span>
+
+                    <span class="visually-hidden">Próximo</span>
+
+                </button>
+
             </div>
 
-        </div>
+        </section>
 
-    </section>
+    </main>
 
-    <!-- MENSAGEM -->
-
-    <section class="mensagem" id="mensagem">
-
-        <h2>O que o filme nos ensina?</h2>
-
-        <p>
-            Kung Fu Panda 2 mostra a importância da amizade,
-            da coragem e do autoconhecimento. A história ensina
-            que nosso passado faz parte de quem somos, mas não
-            determina nosso futuro. Também destaca a importância
-            de encontrar a paz interior e nunca desistir.
-        </p>
-
-    </section>
-
-    <!-- RODAPÉ -->
-
+    <!-- FOOTER -->
     <footer>
 
+        <h4>LA CASA DE PAPEL</h4>
+
         <p>
-          
+            Projeto desenvolvido para a 3ª Avaliação
+            de HTML e Bootstrap.
         </p>
 
         <p>
-           
+            Página desenvolvida para fins educacionais.
         </p>
+
+        <p>© 2026 - Todos os direitos reservados.</p>
 
     </footer>
 
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
